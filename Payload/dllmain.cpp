@@ -74,15 +74,19 @@ BOOL _evtNext(
     {
        
         LPWSTR xml = eventXML((EVT_HANDLE)Events[i]);
-        std::wstring ws(xml);
-        if (ws.find(L"ProcessID='6036'") != std::wstring::npos) {
-            OutputDebugString(L"Find Process!");
-            EvtClose(Events[i]);
-            Events[i] = NULL;
 
+        if (xml != NULL) {
+            std::wstring ws(xml);
+            if (ws.find(L"ProcessID='6036'") != std::wstring::npos) {
+                OutputDebugString(L"Find Process!");
+                EvtClose(Events[i]);
+                Events[i] = NULL;
+
+            }
+
+            free(xml);
         }
-
-        free(xml);
+       
        
     }
 
