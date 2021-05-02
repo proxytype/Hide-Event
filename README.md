@@ -1,5 +1,5 @@
 # Hide-Event
-Remove Events from Event Viewer By Process ID
+Remove Events from Event Viewer list By Process ID
 
 ## Requierments:
 Microsoft Detours Library - https://github.com/microsoft/Detours
